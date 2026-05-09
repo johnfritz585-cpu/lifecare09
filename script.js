@@ -1,4 +1,4 @@
-// Login simulation using localStorage (same as before)
+// Login simulation using localStorage
 const correctUsername = "user";
 const correctPassword = "password";
 
@@ -9,8 +9,8 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     const password = document.getElementById("password").value;
     
     if (username === correctUsername && password === correctPassword) {
-        localStorage.setItem("isLoggedIn", true);
-        window.location.href = "home.html";
+        localStorage.setItem("isLoggedIn", true);  // Save login state
+        window.location.href = "home.html";         // Redirect to home page
     } else {
         document.getElementById("error-message").innerText = "Invalid login credentials!";
     }
@@ -18,8 +18,15 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
 
 // Logout function
 function logout() {
-    localStorage.removeItem("isLoggedIn");
-    window.location.href = "login.html";
+    localStorage.removeItem("isLoggedIn");  // Remove login state
+    window.location.href = "login.html";    // Redirect to login page
+}
+
+// Check if the user is logged in, if not, redirect to login page
+window.onload = function () {
+    if (!localStorage.getItem("isLoggedIn")) {
+        window.location.href = "login.html";  // Redirect to login if not logged in
+    }
 }
 
 // Function to save Notes
