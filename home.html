@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Student Life & Wellness Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to Student Life & Wellness Planner</h1>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="#academic-planner">Smart Academic Planner</a></li>
+            <li><a href="#health-monitoring">Health and Wellness Monitoring</a></li>
+            <li><a href="#mental-health">Mental Health and Stress Support</a></li>
+            <li><a href="#daily-life">Daily Life Management Tools</a></li>
+            <li><a href="#student-support">Student Support System</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <div class="summary-cards">
+                <!-- Dynamically generated content from script.js -->
+            </div>
+        </section>
+
+        <section id="notes">
+            <h2>Your Notes</h2>
+            <textarea id="notesInput" placeholder="Type your notes here..." rows="6"></textarea>
+            <button onclick="saveNote()">Save Note</button>
+            <div id="savedNote"></div>
+        </section>
+
+        <section id="suggestions">
+            <h2>Suggestions</h2>
+            <textarea id="suggestionsInput" placeholder="What features would you like to see next?" rows="4"></textarea>
+            <button onclick="saveSuggestion()">Save Suggestion</button>
+            <div id="savedSuggestions"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
