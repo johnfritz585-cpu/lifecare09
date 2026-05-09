@@ -1,56 +1,58 @@
-// Example Data for Dashboard
-let academicData = {
-    tasks: 5,
-    deadlines: 3,
-    exams: 2
-};
+// Login simulation using localStorage (same as before)
+const correctUsername = "user";
+const correctPassword = "password";
 
-let healthData = {
-    waterIntake: 4, // Liters
-    sleepHours: 7
-};
+// Login Form
+document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    
+    if (username === correctUsername && password === correctPassword) {
+        localStorage.setItem("isLoggedIn", true);
+        window.location.href = "home.html";
+    } else {
+        document.getElementById("error-message").innerText = "Invalid login credentials!";
+    }
+});
 
-let mentalHealthData = {
-    mood: 'Happy',
-    stressLevel: 3 // 1-5 scale
-};
-
-// Function to Update Dashboard Summary Cards
-function updateDashboard() {
-    let dashboard = document.querySelector('.summary-cards');
-
-    dashboard.innerHTML = `
-        <div>
-            <h3>Tasks</h3>
-            <p>${academicData.tasks}</p>
-        </div>
-        <div>
-            <h3>Deadlines</h3>
-            <p>${academicData.deadlines}</p>
-        </div>
-        <div>
-            <h3>Exams</h3>
-            <p>${academicData.exams}</p>
-        </div>
-        <div>
-            <h3>Water Intake</h3>
-            <p>${healthData.waterIntake} Liters</p>
-        </div>
-        <div>
-            <h3>Sleep Hours</h3>
-            <p>${healthData.sleepHours} Hours</p>
-        </div>
-        <div>
-            <h3>Mood</h3>
-            <p>${mentalHealthData.mood}</p>
-        </div>
-    `;
+// Logout function
+function logout() {
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "login.html";
 }
 
-// Call the function to populate the dashboard
-updateDashboard();
+// Function to save Notes
+function saveNote() {
+    const note = document.getElementById("notesInput").value;
+    if (note) {
+        localStorage.setItem("savedNote", note);
+        document.getElementById("savedNote").innerText = "Note Saved: " + note;
+    } else {
+        alert("Please enter a note!");
+    }
+}
 
-// Dark Mode Toggle
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
+// Function to save Suggestions
+function saveSuggestion() {
+    const suggestion = document.getElementById("suggestionsInput").value;
+    if (suggestion) {
+        localStorage.setItem("savedSuggestion", suggestion);
+        document.getElementById("savedSuggestions").innerText = "Suggestion Saved: " + suggestion;
+    } else {
+        alert("Please enter a suggestion!");
+    }
+}
+
+// Display saved notes and suggestions if they exist
+window.onload = function () {
+    const savedNote = localStorage.getItem("savedNote");
+    if (savedNote) {
+        document.getElementById("savedNote").innerText = "Saved Note: " + savedNote;
+    }
+
+    const savedSuggestion = localStorage.getItem("savedSuggestion");
+    if (savedSuggestion) {
+        document.getElementById("savedSuggestions").innerText = "Saved Suggestion: " + savedSuggestion;
+    }
 }
