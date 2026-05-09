@@ -2,7 +2,7 @@
 LifeCare - Student Health &amp; Life Management App
 # Student Life & Wellness Planner
 
-This is a web-based planner to help students manage their academic tasks, health, wellness, mental health, and daily life activities. It is built with HTML, CSS, and JavaScript, and uses localStorage to store user data.
+This is a web-based planner to help students manage their academic tasks, health, wellness, and daily life activities. It is built with HTML, CSS, and JavaScript, and uses localStorage to store user data.
 
 ## Features:
 - **Smart Academic Planner**: Manage your class schedules, tasks, and deadlines.
@@ -10,6 +10,8 @@ This is a web-based planner to help students manage their academic tasks, health
 - **Mental Health and Stress Support**: Track your mood, stress levels, and get wellness tips.
 - **Daily Life Management**: Habit tracker, expense tracker, and checklist organizer.
 - **Student Support System**: Peer support and personalized reminders based on stress levels.
+- **Notes Section**: Allows users to type and save their notes.
+- **Suggestions Box**: Allows users to give feedback and suggest features.
 
 ## Installation:
 1. Clone or download this repository.
